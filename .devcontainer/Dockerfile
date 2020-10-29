@@ -28,8 +28,9 @@ RUN ln -s /usr/bin/python3.8 /usr/bin/python && \
 RUN TZ=US/Mountain \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN cd /root && \
+RUN dir=$(pwd) && \
+    cd /root && \
     wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-316.0.0-linux-x86_64.tar.gz && \
     tar -xvzf google-cloud-sdk-316.0.0-linux-x86_64.tar.gz && \
-    cd google-cloud-sdk && \
-    ./install-gcloud-sdk.exp
+    cd google-cloud-sdk 
+    $dir/install-gcloud-sdk.exp
