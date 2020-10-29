@@ -1,6 +1,8 @@
 ARG DEBIAN_FRONTEND=noninteractive
 FROM raychorn/ubuntu_python38
 
+ENV APP_PATH=/workspaces/python-firebase-sample1
+
 LABEL version="1.0"
 LABEL maintaner="Ray C Horn (raychorn@gmail.com)"
 LABEL release-date="10-28-2020"
@@ -28,9 +30,11 @@ RUN ln -s /usr/bin/python3.8 /usr/bin/python && \
 RUN TZ=US/Mountain \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN dir=$(pwd) && \
+RUN export dir=$(pwd) && \
+    echo $dir && \
     cd /root && \
     wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-316.0.0-linux-x86_64.tar.gz && \
     tar -xvzf google-cloud-sdk-316.0.0-linux-x86_64.tar.gz && \
-    cd google-cloud-sdk 
-    $dir/install-gcloud-sdk.exp
+    cd google-cloud-sdk && \
+    cp $APP_PATH/install-gcloud-sdk.exp /root/google-cloud-sdk/install-gcloud-sdk.exp && \
+    ./install-gcloud-sdk.exp
