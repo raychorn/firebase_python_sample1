@@ -36,4 +36,4 @@ RUN export dir=$(pwd) && \
     wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-316.0.0-linux-x86_64.tar.gz && \
     tar -xvzf google-cloud-sdk-316.0.0-linux-x86_64.tar.gz
 
-RUN /workspaces/python-firebase-sample1/install-gcloud.sh &> install-gcloud.txt
+#RUN /workspaces/python-firebase-sample1/install-gcloud.sh &> install-gcloud.txt
