@@ -15,7 +15,8 @@
 	"extensions": [],
 	"appPort": [
 		8080
-	]
+	],
+	"postCreateCommand": "bash -i -c 'cp install-gcloud-sdk.exp /root/google-cloud-sdk/install-gcloud-sdk.exp && /root/google-cloud-sdk/install-gcloud-sdk.exp'"
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 

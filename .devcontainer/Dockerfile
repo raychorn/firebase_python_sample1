@@ -34,7 +34,10 @@ RUN export dir=$(pwd) && \
     echo $dir && \
     cd /root && \
     wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-316.0.0-linux-x86_64.tar.gz && \
-    tar -xvzf google-cloud-sdk-316.0.0-linux-x86_64.tar.gz && \
-    cd google-cloud-sdk && \
-    cp $APP_PATH/install-gcloud-sdk.exp /root/google-cloud-sdk/install-gcloud-sdk.exp && \
-    ./install-gcloud-sdk.exp
+    tar -xvzf google-cloud-sdk-316.0.0-linux-x86_64.tar.gz
+
+#COPY install-gcloud-sdk.exp /root/google-cloud-sdk/install-gcloud-sdk.exp
+
+#cd google-cloud-sdk
+#cp $APP_PATH/install-gcloud-sdk.exp /root/google-cloud-sdk/install-gcloud-sdk.exp
+#/root/google-cloud-sdk/install-gcloud-sdk.exp
