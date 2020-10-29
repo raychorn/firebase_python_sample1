@@ -16,7 +16,7 @@
 	"appPort": [
 		8080
 	],
-	"postCreateCommand": "bash -i -c './install-gcloud.sh'"
+	"postCreateCommand": "bash -i -c '/workspaces/python-firebase-sample1/install-gcloud.sh'"
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
