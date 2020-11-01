@@ -36,4 +36,11 @@ RUN export dir=$(pwd) && \
     wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-316.0.0-linux-x86_64.tar.gz && \
     tar -xvzf google-cloud-sdk-316.0.0-linux-x86_64.tar.gz
 
-#RUN /workspaces/python-firebase-sample1/install-gcloud.sh &> install-gcloud.txt
+RUN apt install software-properties-common -y --fix-missing && \
+    add-apt-repository ppa:deadsnakes/ppa -y && \
+    apt install python3.7 -y --fix-missing
+
+RUN unlink /usr/bin/python && \
+    unlink /usr/bin/pip && \
+    ln -s /usr/bin/python3.7 /usr/bin/python && \
+    ln -s /usr/bin/pip3 /usr/bin/pip
