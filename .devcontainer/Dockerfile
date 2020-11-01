@@ -44,3 +44,6 @@ RUN unlink /usr/bin/python && \
     unlink /usr/bin/pip && \
     ln -s /usr/bin/python3.7 /usr/bin/python && \
     ln -s /usr/bin/pip3 /usr/bin/pip
+
+RUN pip3 install virtualenv
+

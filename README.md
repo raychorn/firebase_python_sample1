@@ -7,5 +7,11 @@ This projects builds the docker container you need to run the project.
 To complete the installation of gcloud run the following command.
 ./install-gcloud.sh
 
+The following is optional and need only be done once.  This was done to resolve the issues with pip3 because it appeared to me I was using the Python 3.8 Packages with pip3.
+virtualenv -p /usr/bin/python3.7 venv
+
+Do this when you begin using the container:
+. venv/bin/activate
+
 
 (c). Copyright, Ray C Horn, All Rights Reserved.
