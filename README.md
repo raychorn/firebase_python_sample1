@@ -13,5 +13,10 @@ virtualenv -p /usr/bin/python3.7 venv
 Do this when you begin using the container:
 . venv/bin/activate
 
+gcloud components install app-engine-python
+
+Clone the Google Code Samples
+git clone https://github.com/GoogleCloudPlatform/python-docs-samples
+
 
 (c). Copyright, Ray C Horn, All Rights Reserved.
